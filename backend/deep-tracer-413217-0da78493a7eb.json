@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "deep-tracer-413217",
+  "private_key_id": "0da78493a7eb59f191e43de513ad6f3ba655200a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC6tHojXjbyMvYU\nDoVBkfUFSPDYaPffG98ImUEmJgUL24TeREX6mejSpZMx9PrGA1wYbgOWRj8B6Q9W\n1prf5TfNNnS348T2KWktXrA3rJ/spWR5plUmRlzWFRGfkPY/pi9/T/Rt/gWBly4k\n7ESxqP++nuocf+aAMMSv95WpCYUF97ynNSRHEwE//HlTztocS7mXBUxdK/xIq3w6\nNh9aiHp8F/WtDgWUfTDltgAO5tq++WQM5y8Tmc5Uj1QstavJWyh01gySj2yS6UWJ\nlczJAppGdhKecXr/UkgZFPmoekQm2KnAIuBw+b1iEnMXCAKMLiZl4Ax8ZAFMkxOm\nxQ8At3bhAgMBAAECggEAHAovz7D+GojJyUBXBf54KGeIeE/nbhP+/okZrjOGjX3V\n6hWh1t2XiE9CmH2czfFCOw8GreJ14wEQAzAuyVJg+4pipB1qfrfAaoZue6YKzJ0Y\nRmbTIfDuT16Rq3+3Y96/AmVNJdnBFPHSBcyQEoh5hDTUnxwcT4NDftP1n5Hk7vzA\nnLZuBeO7nVtbT6j4amt7kE5lgf0s8vMJ+LhWTWNm5cKF+n+dNYBbg5SXV9oyTaIq\nhXUK56o8QOxNglw1wrGE6qmsxo+KRYa/lfRoijt5fLuZJ9dF/csnE+yjzXY+UJVs\nB+f52m1v9sRhwJVzQXl2eNVzx0MNoVd1bH62rCLW+QKBgQDiY34PVNcAxnJKFwyV\n8BYdintg+pWy5du4H5URzCrO7DLEAvnkY5NTpKUHNBB0GzTEt1DhyVL/lFmSzcbE\nZoWuc1dalnUnZh+pWcNkMxvM3AnTYYcpqoFCe0iD4qFyHYa9wwdBT7zWz7XPHUSO\nBvUQB5LbNallN8DJkJNJV6Y0dQKBgQDTIDKpGhZnoHAeVKQyednSaiYFb87l9fl5\nfRSjpuaT2Z8oJO7M516YXoT9eReaY+2cDcx/IdqcDcuZRdCwxLAcYR30NlR78xWo\nzyg9ky7lPDOTLDS5AQkgy2NPZJh9y68ZMqyyWn2W6W7mF9NMmPi9qvDhnbxQ7d6j\nF8pady47PQKBgQDGEPnne/inqvevLr9KJ0WSDuinDlYOsOAtFSSc7528cBZyO5Ba\na2woT/I6fSiwDGV8fk37XOKKzUYZFIQErRXkbPFORji1gbnNtsUmUzjNYO4PzFIu\n+AgjHC1zhcJuTrrmJ02frJ2w6wVL8XVbNWcO4TFxLF/KOJ8pOp5CGrdFSQKBgQCK\n9vmBhtNSeC70N+Av/TZbolTOZU643JPN3H+2TEge7zIsWUr5gh0oi6ZbtNXNYJLo\nkciVsbHT39ywUVzQzVXiCCaQNSacw17xUxF4niVS67JC3+kAEOdyN41xl5Qr0OK6\n4jj72EYsDBBb0TjahSHMrfSJfKqUVk2h6ineK+45PQKBgG6em4xbaHzGu1c0P1gE\nyivIc2rnG3Tcoztu+VHlHh4NvP4HfxbJladZJEK5PtRP26yiOFbly0kjuFtrcs2w\nV0yxoSWoFxwtR+hjSRXUf6q2kg+N7eDjAXBHU+IobZs8h7h0wyjuM8ywvuR6Jcg+\nr/3LeayoSa5o8kqxE5dISran\n-----END PRIVATE KEY-----\n",
+  "client_email": "service-account@deep-tracer-413217.iam.gserviceaccount.com",
+  "client_id": "112754493601417385728",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/service-account%40deep-tracer-413217.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
