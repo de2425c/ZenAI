@@ -34,7 +34,7 @@ function NavBar(){
       <a href="/" className="logo">
         <img src="https://via.placeholder.com/50" alt="Company Logo" style={logoStyle} />
       </a>
-      <h1 style = {{color: 'black'}}> Zenith </h1>
+      <h1 style = {{color: 'black'}}> ZenAI </h1>
       <div className="login-button">
         <button 
           onMouseEnter={() => setIsHovered(true)}
@@ -46,6 +46,6 @@ function NavBar(){
       </div>
     </nav>
   );
-  }
+}
 
 export default NavBar;
