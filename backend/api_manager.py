@@ -28,7 +28,7 @@ class api_manager():
 
         return reply
     
-    def tts(self, text):
+    def tts(self, text, background_noise):
         client = texttospeech.TextToSpeechClient()
         voice1 = texttospeech.VoiceSelectionParams(
             name = 'en-US-News-L',
@@ -53,9 +53,19 @@ class api_manager():
                     audio_config = audio_config
                 )
                 output.write(response.audio_content)
-                
-        sound = AudioSegment.from_file("audio_files/42-Rain-10min.mp3", format = "mp3")
-        sound = sound - 20
+        
+        sound = None
+
+        if background_noise == "rain":
+            sound = AudioSegment.from_file("audio_files/Rain.mp3", format = "mp3")
+
+        elif background_noise == "ocean":
+            sound = AudioSegment.from_file("audio_files/Ocean.mp3", format = "mp3")
+
+        else:
+            sound = AudioSegment.from_file("audio_files/blank.wav", format = "wav")
+
+        sound = sound - 10
         combined = AudioSegment.from_file('audio_files/zaudio.wav',format="wav").overlay(sound, position = 0)
         combined.export("audio_files/final.wav", format="wav")
 

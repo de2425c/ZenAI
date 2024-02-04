@@ -35,10 +35,11 @@ async def tts(request: Request):
     try:
         data = await request.json()
 
-        if 'content' not in data:
-            raise HTTPException(status_code=400, detail="Invalid request. Pass in content with content field.")
+        if 'content' not in data or 'background_noise' not in data:
+            raise HTTPException(status_code=400, detail="Invalid request. Pass in content with content field. Pass in background_noise with background_noise field.")
         content = data['content'] 
-        output_location = api_manager.tts(content)
+        background_noise = data['background_noise']
+        output_location = api_manager.tts(content,background_noise)
         return FileResponse(output_location, media_type='audio/wav')
     
     except Exception as e:
