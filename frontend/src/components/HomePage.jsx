@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import sunset from '../icons/superepicsunset.webp';
 import { Link } from 'react-router-dom';
 
 function HomePage() {
     const backgroundImageStyle = {
-    backgroundImage: `url(${sunset}`,
+    backgroundImage: `url(${sunset})`,
     opacity: 0.5,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -25,7 +25,70 @@ function HomePage() {
     position: 'relative', 
     textAlign: 'center',
   };
-  
+  const buttonStyle = {
+    backgroundColor: 'black',
+    color: '#CBC3E3',
+    padding: '10px 20px',
+    borderRadius: '10px',
+    cursor: 'pointer',
+  }
+  const[showButton, setShowButton] = useState(true);
+  const[show, setShow] = useState('hidden');
+  const handleClick = () => {
+    setShow('visible');
+    setShowButton(false);
+    setShowSecondButton(true);
+  }
+  const [showSecondButton, setShowSecondButton] = useState(false);
+ 
+  const handleInput = () => {
+    console.log("placeholder");
+  }
+  const [selectedNoise, setSelectedNoise] = useState('');
+  const handleNoiseChange = (event) => {
+    setSelectedNoise(event.target.value);
+  }
+
+  const [inputText, setInputText] = useState('');
+  const [openAIapiResponse, setOpenAIapiResponse] = useState('');
+  const [googleApiResponse, setGoogleApiResponse] = useState('');
+
+  const handleInputChange = (event) => {
+    setInputText(event.target.value);
+  }
+
+  const makeApiCall = () => {
+    const openAIapiURL = "http://localhost:8000/api/generate_text";
+
+    //Make API POST Request
+    fetch(openAIapiURL, {
+      method: 'POST', 
+      body: JSON.stringify({prompt: inputText}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      setOpenAIapiResponse(data.response);
+      const googleApiURL = "http://localhost:8000/api/tts";
+      return fetch(googleApiURL, {
+        method: 'POST',
+        body: JSON.stringify({content: data.response}),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      setGoogleApiResponse(data.audio);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  };
+
   return (
     <div> 
     <div style={backgroundImageStyle}></div> 
@@ -33,16 +96,45 @@ function HomePage() {
     <div className="home">
       <section className="hero">
         <h1>Your Journey to Peace Begins Here</h1>
-        <p>Embark on a path to tranquility with guided meditation and sleep stories.</p>
+        <p>Personalized Meditations for Everyone</p>
+        <p>with the assistance of AI companion Zen</p>
       </section>
       <section className="features">
         <div className="feature">
-          <p>Find inner peace and balance through guided sessions.</p>
         </div>
       </section>
-      <Link to="/start">
-          <button>Start Now</button>
-        </Link>
+      {showButton && 
+        <button onClick = {handleClick} style = {buttonStyle} >Start Now</button>
+        }
+        <p style = {{marginBlockEnd: '0em', visibility: show, lineHeight: "1em"}} type> Describe your situation to me:</p>
+        <p style = {{justifyContent: 'center', top: '20px', display: 'flex', alignItems: 'center', width: '100%', color: 'grey', visibility: show, }}></p>
+        <textarea
+        onChange={handleInputChange}
+        type = "text"
+        rows = "4" 
+        cols = "40"
+        placeholder="I'm looking to get into the zone for a big sports game coming up, can you guide me through a 5 minute meditation?"
+        style = {{resize: 'none', opacity: '0.5', justifyContent: 'center', visibility: show, textAlign: 'center', width: '80%'}}
+        />
+        <div></div>
+        <p style = {{visibility: show, }}>Choose a background noise:</p>
+        <div style = {{display: 'flex',flexDirection: 'column', alignItems: 'center', marginBlockEnd: '0em', justifyContent: 'center' }}>
+        <select
+            value = {selectedNoise}
+            onChange = {handleNoiseChange}
+            justifyContent= 'center'
+            style = {{visibility: show, opacity: '0.5', display: 'block', margin: '10px 0', width: '40%'}}
+        >
+            <option value="">Select...</option>
+            <option value="rain">Rain</option>
+            <option value="ocean">Ocean</option>
+            <option value="rain">None</option>
+        </select>
+        <div></div>
+        {showSecondButton && 
+            <button onClick = {makeApiCall} style = {buttonStyle}>  Generate Response </button>
+        }
+    </div>
     </div>
     </div>
     </div>
