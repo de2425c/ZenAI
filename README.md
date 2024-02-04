@@ -1,5 +1,7 @@
 # devfestmeditation
 
+![gallery (1)](https://github.com/de2425c/devfestmeditation/assets/154690407/80806dc3-2d66-4f96-8f65-6d107b8e44a6)
+
 # Inspiration
 We realize that meditation is an invaluable way to improve mental health, but at the same time, people may feel left out in the process. We wanted to create a platform where meditation was not only personalized to every user's situation, but was acessible widely.
 
