@@ -1,4 +1,4 @@
-# devfestmeditation
+# ZenAI
 
 ![gallery (1)](https://github.com/de2425c/devfestmeditation/assets/154690407/80806dc3-2d66-4f96-8f65-6d107b8e44a6)
 
