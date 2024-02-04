@@ -40,9 +40,9 @@ class api_manager():
             speaking_rate=0.8,
             audio_encoding = texttospeech.AudioEncoding.LINEAR16
         )
-        pause5s = AudioSegment.from_file("backend/audio_files/blank.wav", format = "wav")
+        pause5s = AudioSegment.from_file("audio_files/blank.wav", format = "wav")
 
-        with open('backend/audio_files/zaudio.wav','wb',) as output:
+        with open('audio_files/zaudio.wav','wb',) as output:
             if not text:
                 combined += pause5s
             else:
@@ -54,11 +54,11 @@ class api_manager():
                 )
                 output.write(response.audio_content)
                 
-        sound = AudioSegment.from_file("backend/audio_files/42-Rain-10min.mp3", format = "mp3")
+        sound = AudioSegment.from_file("audio_files/42-Rain-10min.mp3", format = "mp3")
         sound = sound - 20
-        combined = AudioSegment.from_file('backend/audio_files/zaudio.wav',format="wav").overlay(sound, position = 0)
-        combined.export("backend/audio_files/final.wav", format="wav")
+        combined = AudioSegment.from_file('audio_files/zaudio.wav',format="wav").overlay(sound, position = 0)
+        combined.export("audio_files/final.wav", format="wav")
 
-        return "backend/audio_files/final.wav"
+        return "audio_files/final.wav"
 
 
