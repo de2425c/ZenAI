@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import sunset from '../icons/superepicsunset.webp';
-import { Link } from 'react-router-dom';
 
 function HomePage() {
     const backgroundImageStyle = {
@@ -47,47 +46,59 @@ function HomePage() {
   const handleNoiseChange = (event) => {
     setSelectedNoise(event.target.value);
   }
+  const dropDownMenuStyle = {
+    visibility: show,
+    opacity: '0.5',
+    display: 'block',
+    margin: '10px 0',
+    width: '40%',
+    justifyContent: 'center'
+  }
+  const textAreaStyle = {
+    resize: 'none',
+    opacity: '0.5',
+    justifyContent: 'center',
+    visibility: show,
+    textAlign: 'center',
+    width: '80%',
+  }
+  const subHeadingStyle = {
+    marginBlockEnd: '0em',
+    paddingBottom: '10px'
+  }
+
   return (
     <div> 
     <div style={backgroundImageStyle}></div> 
     <div style={centerContentStyle}>
     <div className="home">
-      <section className="hero">
+      <section>
         <h1>Your Journey to Peace Begins Here</h1>
-        <p>Personalized Meditations for Everyone</p>
-        <p>with the assistance of AI companion Zen</p>
+        <p style = {subHeadingStyle}>Personalized Meditations for Everyone <br/> with the assistance of AI companion Zen</p>
       </section>
-      <section className="features">
-        <div className="feature">
-        </div>
-      </section>
-      {showButton && 
+      {showButton &&
         <button onClick = {handleClick} style = {buttonStyle} >Start Now</button>
         }
-        <p style = {{marginBlockEnd: '0em', visibility: show, lineHeight: "1em"}} type> Describe your situation to me:</p>
-        <p style = {{justifyContent: 'center', top: '20px', display: 'flex', alignItems: 'center', width: '100%', color: 'grey', visibility: show, }}></p>
+        <p style = {{visibility: show}} type> Describe your situation to me:</p>
         <textarea
         type = "text"
         rows = "4" 
         cols = "40"
         placeholder="I'm looking to get into the zone for a big sports game coming up, can you guide me through a 5 minute meditation?"
-        style = {{resize: 'none', opacity: '0.5', justifyContent: 'center', visibility: show, textAlign: 'center', width: '80%'}}
+        style = {textAreaStyle}
         />
-        <div></div>
-        <p style = {{visibility: show, }}>Choose a background noise:</p>
-        <div style = {{display: 'flex',flexDirection: 'column', alignItems: 'center', marginBlockEnd: '0em', justifyContent: 'center' }}>
-        <select
+        <p style = {{visibility: show}}>Choose a background noise:</p>
+        <div style = {{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+         <select
             value = {selectedNoise}
             onChange = {handleNoiseChange}
-            justifyContent= 'center'
-            style = {{visibility: show, opacity: '0.5', display: 'block', margin: '10px 0', width: '40%'}}
-        >
+            style = {dropDownMenuStyle}
+         >
             <option value="">Select...</option>
             <option value="rain">Rain</option>
             <option value="ocean">Ocean</option>
             <option value="rain">None</option>
-        </select>
-        <div></div>
+         </select>
         {showSecondButton && 
             <button onClick = {handleInput} style = {buttonStyle}>  Generate Response </button>
         }
